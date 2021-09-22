@@ -1,0 +1,30 @@
+
+
+            * {
+                text-align: center;
+            }
+
+            .main-div {
+                display: block;
+                background-image: url("../image.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                margin: 40px auto;
+                overflow: hidden;
+                width: 387px;
+                height: 297px;
+            }
+
+            .text-box {
+                font-size: 30px;
+            }
+
+            .button-box * {
+                border: solid 1px white;
+                margin-top: 0px;
+                margin-bottom: 30px;
+                font-size: 23px;
+                font-family: 'Gamja Flower', cursive;
+                cursor: pointer;
+            }
