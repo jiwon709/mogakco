@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>day7</title>
+
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
+            * {
+                text-align: center;
+            }
+
+            .main-div {
+                display: block;
+                background-image: url("image.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                margin: 40px auto;
+                overflow: hidden;
+                width: 387px;
+                height: 297px;
+            }
+
+            .time-box {
+                font-size: 80px;
+            }
+
+            .button-box * {
+                border: solid 1px white;
+                margin-top: 0px;
+                margin-bottom: 30px;
+                font-size: 23px;
+                font-family: 'Gamja Flower', cursive;
+                cursor: pointer;
+            }
+
+            .time-list {
+                display: inline-block;
+                font-family: 'Gamja Flower', cursive;
+            }
+
+            .time-list th {
+                width: 120px;
+                font-size: 20px;
+                border-bottom: 1px solid skyblue;
+            }
+        </style>
+
+        <script>
+            window.onload = function() {
+                var startButton = document.getElementById("start");
+                var stopButton = document.getElementById("stop");
+                var saveButton = document.getElementById("save");
+                var display = document.getElementById("display");
+                 
+                var sec = 0;
+                var min = 0;
+                var hrs = 0;
+                var t;
+               
+                var list_add = document.getElementById("list-table");
+                var list_num = 0;
+                
+                // 00:00:00 이면 '시작' 버튼으로만 작동시작, 0초이기 때문에 기록 남기지 않기
+                if (startButton.value == "시작") {
+                    startButton.onclick = start;
+                    stopButton.onclick = clear;
+                    saveButton.onclick = clear;
+                }
+
+                function tick() {
+                    sec++;
+                        if (sec >= 60) {
+                            sec = 0;
+                            min++;
+                            if (min >= 60) {
+                                min = 0;
+                                hrs++;
+                            }
+                        }
+                }
+
+                function timer() {
+                    t = setTimeout(add, 1000);
+
+                    if(stopButton.value=="재시작"){
+                        stopButton.value = "정지";
+                        stopButton.onclick = stop;
+                    }
+                }
+                
+                function add() {
+                    tick();
+                    
+                    display.innerHTML = (hrs > 9 ? hrs : "0" + hrs) 
+                    + ":" + (min > 9 ? min : "0" + min) 
+                    + ":" + (sec > 9 ? sec : "0" + sec); 
+                    
+                    timer();
+                }
+
+                function start() {
+                    timer(); 
+
+                    startButton.value = "초기화";
+
+                    if(startButton.value == "초기화") {
+                        startButton.onclick = clear;
+                        stopButton.onclick = stop;
+                        saveButton.onclick = save;
+                    }
+
+                    if(stopButton.value == "재시작") {
+                        alert("시작을 눌러주세요!");
+                    }
+                }
+
+                function stop() {
+                    clearTimeout(t);
+
+                    if(stopButton.value == "정지") {
+                        stopButton.value = "재시작";
+                        startButton.onclick = clear;
+                        stopButton.onclick = timer;
+                        saveButton.onclick = save;
+                    }
+                }
+
+                function clear() {
+                    clearTimeout(t);
+                    startButton.value = "시작";
+
+                    hrs = 0, min = 0, sec = 0, list_num = 0;
+                    display.innerHTML = '00:00:00';
+                    list_add.innerHTML = "<th>구간</th><th>전체기록</th>";
+
+                    //초기화 시킨 후 '시작'으로만 작동시키기, 0초이기 때문에 기록 남기지 않기
+                    startButton.onclick = start;
+                    stopButton.onclick = clear;
+                    saveButton.onclick = clear;
+                }
+
+                function save() {
+                    list_add.innerHTML += "<tr><td>"+list_num+"</td><td>"+display.innerText+"</td></tr>";
+                    list_num++;
+                }
+                
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="main-div">
+            <div class="time-box">
+                <p id="display">00:00:00</p>
+            </div>
+
+            <div class="button-box">
+                <input type="button" id="start" value="시작">
+                <input type="button" id="stop" value="정지">
+                <input type="button" id="save" value="기록">
+            </div>
+        </div>
+
+        <div class="time-list">
+            <table id="list-table">
+                <th>구간</th>
+                <th>전체기록</th>
+            </table>
+        </div>
+    </body>
+
+</html>
