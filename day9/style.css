@@ -1,0 +1,52 @@
+.head {
+    line-height: 60px;
+}
+
+.nav {
+    background-image: url('https://www.gifcen.com/wp-content/uploads/2021/06/discord-gif-6.gif');
+    background-size: contain;
+    background-position: center center;
+}
+
+.nav-list {
+    list-style: none;
+    text-align: center;
+    padding: 0px;
+}
+
+.nav-list-object {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+li:hover {
+    color: teal;
+    cursor: pointer;
+}
+
+#title-table {
+    text-align: center;
+    margin: auto;
+}
+
+#title-table tr {
+    background-color: wheat;
+}
+
+#title-table td {
+    background-color: thistle;
+    padding: 15px;
+}
+
+#title-table img {
+    height: 335px;
+    width: 255px;
+}
+
+.footer {
+    line-height: 40px;
+}
+
+.address {
+    background-color: coral;
+}
