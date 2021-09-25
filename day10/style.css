@@ -1,0 +1,50 @@
+.main {
+    display: block;
+    background-color: black;
+    text-align: center;
+    width: 400px;
+    height: 600px;
+    margin: auto;
+}
+
+.who-name {
+    font-size: 30px;
+    color: white;
+    font-style: normal;
+    line-height: 230px;
+}
+
+.who-number {
+    background-color: green;
+    border-radius: 15px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    padding: 12px;
+    font-size: 20px;
+}
+
+#number {
+    background-color: green;
+    border: 0px;
+    color: white;
+}
+
+#number:hover {
+    color: black;
+    cursor: pointer;
+}
+
+#back {
+    display: block;
+    margin: 25px auto;
+    background-color: black;
+    color: white;
+    border: 0px;
+    font-size: 12px;
+}
+
+#back:hover {
+    color: green;
+    cursor: pointer;
+}
