@@ -1,0 +1,45 @@
+container {
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.text-info {
+    display: inline-block;
+    border: 1px solid skyblue;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.main-img img {
+    width: 240px;
+    height: 200px;
+    display: block;
+    margin: auto;
+}
+
+.text-box {
+    width: 150px;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    line-height: normal;
+}
+
+.text-box #text-input {
+    margin-bottom: 10px;
+}
+
+.text-box #text-input-button {
+    border: 0px;
+    background-color: skyblue;
+    border-radius: 20px;
+    height: 40px;
+    width: 80px;
+}
+
+#text-input-button:hover {
+    color: white;
+    cursor: pointer;
+}
