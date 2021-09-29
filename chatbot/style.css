@@ -1,7 +1,7 @@
 container {
     display: block;
     text-align: center;
-    margin: auto;
+    margin: 40px auto;
 }
 
 .text-info {
@@ -19,7 +19,7 @@ container {
 }
 
 .text-box {
-    width: 130px;
+    width: 150px;
     height: 30px;
     margin: auto;
     text-align: center;
@@ -34,6 +34,9 @@ container {
 .text-box #text-input-button {
     border: 0px;
     background-color: skyblue;
+    border-radius: 20px;
+    height: 40px;
+    width: 80px;
 }
 
 #text-input-button:hover {
