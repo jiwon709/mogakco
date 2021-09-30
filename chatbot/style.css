@@ -4,7 +4,13 @@ container {
     margin: 40px auto;
 }
 
-.text-info {
+#text_typing {
+    display: block;
+    margin-bottom: 0%;
+    font-size: 13px;
+}
+
+#text-info {
     display: inline-block;
     border: 1px solid skyblue;
     padding: 20px;
@@ -28,6 +34,7 @@ container {
 }
 
 .text-box #text-input {
+    border: blue 1px solid;
     margin-bottom: 10px;
 }
 
@@ -37,6 +44,9 @@ container {
     border-radius: 20px;
     height: 40px;
     width: 80px;
+    position: relative;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 
 #text-input-button:hover {
