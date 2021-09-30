@@ -5,19 +5,43 @@
         <title>chatbot</title>
 
         <link rel="stylesheet" href="../chatbot/style.css" type="text/css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
         <script src="../chatbot/script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+        <script type="text/javascript">
+            $(document).ready(function() {
+                app = document.getElementById('text_typing');
+
+                var typewriter = new Typewriter(app, {
+                    loop: true
+                });
+
+                typewriter
+                    .typeString('개미는 뚠뚠🐜🐜')
+                    .pauseFor(2500)
+                    .deleteAll()
+                    .typeString('오늘도 뚠뚠🐜🐜')
+                    .pauseFor(2500)
+                    .deleteChars(7)
+                    .typeString('열심히 일을 하네 뚠뚠🐜🐜')
+                    .pauseFor(2500)
+                    .start();
+                })
+        </script>
     </head>
 
     <body>
         <container>
-            <div class="text-info">
-                <p id="change-info">내용을 입력해주세요</p>
+            <div id="text_typing"></div>
+
+            <div id="text-info">
+                <p id="change-info">시작을 입력해주세요</p>
             </div>
 
             <div class="main-img">
-                <img src="../image.jpg">
+                <img src="../image.jpg" alt="짱구" id="back_img">
             </div>
 
             <div class="text-box">
